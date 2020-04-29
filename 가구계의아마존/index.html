@@ -42,17 +42,17 @@
       crossorigin="anonymous"></script>
     <script>
       // 코드를 입력하세요.
-      $('#popup-trigger').on('click',openPopup);
+      $('#popup-trigger').on('click',openPopup); //id값이 popup-trigger인 것을 클릭시 openPopup함수로 팝업이 일어나게함.
       $('#close-btn').on('click', closePopup);
-      $(document).on('keydown', keyClosePopup);
+      $(document).on('keydown', keyClosePopup); //keyodwn은 이벤트 객체가 필요함.
       
       function openPopup(){
-        $('#popup').fadeIn(500);
+        $('#popup').fadeIn(500); //0.5초후에 팝업이 생성됨.
       }
       function closePopup(){
         $('#popup').fadeOut(500);
       }
-      function keyClosePopup(event){
+      function keyClosePopup(event){   
         console.log(event.key)
         if(event.key == 'Escape') $('#popup').fadeOut(500);
       }
